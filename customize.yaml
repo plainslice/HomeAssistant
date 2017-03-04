@@ -1,0 +1,152 @@
+#doors
+lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0:
+  friendly_name: Front Door
+cover.garage_door_opener:
+  friendly_name: Garage
+  icon: mdi:car
+
+#ecobee
+climate.living_room:
+  friendly_name: Current State
+  icon: mdi:air-conditioner
+binary_sensor.living_room_occupancy:
+  friendly_name: Living Room
+binary_sensor.master_bedroom_occupancy:
+  friendly_name: Master Bedroom
+binary_sensor.office_occupancy:
+  friendly_name: Office
+binary_sensor.guest_room_occupancy:
+  friendly_name: Guest Room
+
+#Lights
+light.leviton_dzpd31lw_plugin_dimming_lamp_module_level_3_0:
+  friendly_name: Television
+switch.ge_12727_inwall_smart_switch_toggle_switch_6_0:
+  friendly_name: Dining Room
+  icon: mdi:lightbulb
+light.hue_color_lamp_1:
+  friendly_name: Master Shower
+  icon: mdi:water
+light.hue_color_lamp_2:
+  friendly_name: Guest Shower
+group.living_room_lights:
+  icon: mdi:lightbulb
+  order: 1
+group.dining_kitchen_lights:
+  icon: mdi:lightbulb
+  order: 2
+switch.ge_12721_lighting_control_duplex_receptacle_switch_16_0:
+  friendly_name: Mantel
+  icon: mdi:lightbulb
+light.ge_12729_3way_dimmer_switch_level_9_0:
+  friendly_name: Lower Stairs
+  icon: mdi:stairs
+light.ge_12729_3way_dimmer_switch_level_3_0:
+  friendly_name: Master Bedroom
+light.ge_12729_3way_dimmer_switch_level_14_0:
+  friendly_name: Bedroom Hallway
+switch.ge_12727_inwall_smart_switch_toggle_switch_4_0:
+  friendly_name: Upper Stairs
+  icon: mdi:stairs
+switch.ge_12727_inwall_smart_switch_toggle_switch_8_0:
+  friendly_name: Kitchen Hallway
+  icon: mdi:lightbulb
+group.stair_lights:
+  icon: mdi:stairs
+group.downstairs_lights:
+  icon: mdi:lightbulb
+group.upstairs_lights:
+  icon: mdi:lightbulb
+group.bedside_lights:
+  icon: mdi:hotel
+  order: 2
+light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2:
+  icon: mdi:led-on
+  friendly_name: Bed LED Strip
+switch.aeotec_dsc11_smart_strip_switch_15_0_2:
+  friendly_name: Jake's Side
+  icon: mdi:hotel
+switch.aeotec_dsc11_smart_strip_switch_15_0_3:
+  friendly_name: Abbey's Side
+  icon: mdi:hotel
+switch.ge_12727_inwall_smart_switch_toggle_switch_12_0:
+  friendly_name: Basement
+  icon: mdi:oil
+light.ge_12729_3way_dimmer_switch_level_7_0:
+  friendly_name: Kitchen
+  icon: mdi:food-variant
+switch.ge_12727_inwall_smart_switch_toggle_switch_5_0:
+  friendly_name: Living Room
+  icon: mdi:lightbulb
+switch.ge_12727_inwall_smart_switch_toggle_switch_2_0:
+  friendly_name: Office
+  icon: mdi:lightbulb
+switch.ge_12727_inwall_smart_switch_toggle_switch_11_0:
+  friendly_name: Garage Entry
+  icon: mdi:car
+switch.ge_12727_inwall_smart_switch_toggle_switch_13_0:
+  friendly_name: Front Porch
+  icon: mdi:lightbulb
+switch.ge_12727_inwall_smart_switch_toggle_switch_10_0:
+  friendly_name: Garage Light
+  icon: mdi:car
+
+#sensors
+sensor.yr_symbol:
+  friendly_name: Weather
+sensor.speedtest_download:
+  friendly_name: Download Speed
+  icon: mdi:download
+sensor.speedtest_upload:
+  friendly_name: Upload Speed
+  icon: mdi:upload
+sensor.frontdoor_battery:
+  icon: mdi:battery
+sensor.bedroom_motion_battery:
+  icon: mdi:battery
+sensor.garage_motion_battery:
+  icon: mdi:battery
+sensor.garage_door_sensor:
+  icon: mdi:battery
+sensor.stairs_motion_battery:
+  icon: mdi:battery
+sensor.basement_door:
+  icon: mdi:battery
+binary_sensor.ecolink_doorwindow_sensor_sensor_19_0:
+  friendly_name: Basement Door
+binary_sensor.ecolink_doorwindow_sensor_sensor_20_0:
+  friendly_name: Garage Door Sensor
+sensor.living_room_humidity:
+  icon: mdi:weather-snowy
+
+#trackers
+device_tracker.abbey_iphone:
+  friendly_name: Abbey
+  icon: mdi:human-female
+device_tracker.pixel_pixel:
+  friendly_name: Jake
+  icon: mdi:human-male
+sensor.household:
+  icon: mdi:human-male-female
+
+#order
+group.downstairs_other:
+  order: 3
+group.ecobee_sensors:
+  order: 2
+group.master_bedroom_lights:
+  order: 1
+group.upper_hallway:
+  order: 3
+group.downstairs_view:
+  order: 2
+group.upstairs_view:
+  order: 3
+group.ecobee_view:
+  order: 4
+group.automation_view:
+  order: 5
+group.settings_view:
+  order: 6
+group.ecobee_status:
+  order: 1

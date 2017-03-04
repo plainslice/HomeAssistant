@@ -1,0 +1,124 @@
+  ###############
+ #   Basement  #
+###############
+- alias: Turn off porch light
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: switch.turn_off
+    entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_13_0
+
+- alias: Basement Door Open
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_19_0
+    state: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_12_0
+
+- alias: Basement Door Closed
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_19_0
+    state: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_12_0
+
+- alias: Garage Entry Motion
+  trigger:
+    platform: state
+    entity_id: sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1
+    from: '0'
+    to: '255'
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+    - service: switch.turn_on
+      entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_11_0
+    - delay: 00:05:00
+    - service: switch.turn_off
+      entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_11_0
+
+- alias: Garage Light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_20_0
+    state: 'on'
+  condition:
+    condition: state
+    entity_id: cover.garage_door_opener
+    state: closed
+    for:
+      minutes: 2
+  action:
+    - service: switch.turn_on
+      entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_10_0
+    - delay: 00:05:00
+    - service: switch.turn_off
+      entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_10_0
+
+- alias: Garage Entry
+  trigger:
+    - platform: state
+      entity_id: group.jake
+      state: 'home'
+    - platform: state
+      entity_id: group.abbey
+      state: 'home'
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
+    - service: switch.turn_on
+      entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_11_0
+    - delay: 00:05:00
+    - service: switch.turn_off
+      entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_11_0
+
+  ###############
+ #   1st Floor #
+###############
+- alias: Living Room Switch - On
+  trigger:
+    platform: state
+    entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_5_0
+    state: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.ge_12721_lighting_control_duplex_receptacle_switch_16_0
+
+- alias: Living Room Switch - Off
+  trigger:
+    platform: state
+    entity_id: switch.ge_12727_inwall_smart_switch_toggle_switch_5_0
+    state: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.ge_12721_lighting_control_duplex_receptacle_switch_16_0
+
+
+  ###############
+ #   2nd Floor #
+###############
+- alias: Stair lights
+  trigger:
+    platform: state
+    entity_id: sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1
+    from: '0'
+    to: '255'
+  condition:
+    condition: time
+    after: '22:00:00'
+    before: '06:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.ge_12729_3way_dimmer_switch_level_9_0
+    - delay: 00:05:00
+    - service: light.turn_off
+      entity_id: light.ge_12729_3way_dimmer_switch_level_9_0

@@ -1,0 +1,129 @@
+- platform: speedtest
+  monitored_conditions:
+  - download
+  - upload
+- platform: yr
+- platform: cpuspeed
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: disk_free
+      arg: /
+    - type: last_boot
+    - type: memory_use_percent
+- platform: template
+  sensors:
+    frontdoor_battery:
+      value_template:
+        '{% if states.lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0 %}
+          {{ states.lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0.attributes.battery_level }}
+        {% else %}
+          n/a
+        {% endif %}'
+      friendly_name: Front Door Lock
+      unit_of_measurement: '%'
+
+    bedroom_motion_battery:
+      value_template:
+        '{% if states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1 %}
+          {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1.attributes.battery_level }}
+        {% else %}
+          n/a
+        {% endif %}'
+      friendly_name: Bedroom Motion Sensor
+      unit_of_measurement: '%'
+
+    stairs_motion_battery:
+      value_template:
+        '{% if states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1 %}
+          {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1.attributes.battery_level }}
+        {% else %}
+          n/a
+        {% endif %}'
+      friendly_name: Stairs Motion Sensor
+      unit_of_measurement: '%'
+
+    basement_door:
+      value_template:
+        '{% if states.binary_sensor.ecolink_doorwindow_sensor_sensor_19_0 %}
+          {{ states.binary_sensor.ecolink_doorwindow_sensor_sensor_19_0.attributes.battery_level }}
+        {% else %}
+          n/a
+        {% endif %}'
+      friendly_name: Basement Door
+      unit_of_measurement: '%'
+
+    garage_motion_battery:
+      value_template:
+        '{% if states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1 %}
+          {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1.attributes.battery_level }}
+        {% else %}
+          n/a
+        {% endif %}'
+      friendly_name: Garage Motion Sensor
+      unit_of_measurement: '%'
+
+    garage_door_sensor:
+      value_template:
+        '{% if states.binary_sensor.ecolink_doorwindow_sensor_sensor_20_0 %}
+          {{ states.binary_sensor.ecolink_doorwindow_sensor_sensor_20_0.attributes.battery_level }}
+        {% else %}
+          n/a
+        {% endif %}'
+      friendly_name: Garage Door Sensor
+      unit_of_measurement: '%'
+
+    household:
+      value_template: '{% if is_state("group.household", "home") %}Home{% else %}Away{% endif %}'
+      friendly_name: Household
+
+    ecobee_current_mode:
+      friendly_name: 'Current Mode'
+      value_template: >-
+        {%- if states.climate.living_room.attributes.hold_mode == 'home' %}
+            Home
+        {% elif states.climate.living_room.attributes.hold_mode == 'away' %}
+            Away
+        {% elif states.climate.living_room.attributes.hold_mode == 'sleep' %}
+            Sleep
+        {% elif states.climate.living_room.attributes.hold_mode == 'off' %}
+            Off
+        {% else %}
+            Unavailable
+        {%- endif %}
+      icon_template: >-
+        {%- if states.climate.living_room.attributes.hold_mode == 'home' %}
+            mdi:home
+        {% elif states.climate.living_room.attributes.hold_mode == 'away' %}
+            mdi:key-variant
+        {% elif states.climate.living_room.attributes.hold_mode == 'sleep' %}
+            mdi:sleep
+        {% elif states.climate.living_room.attributes.hold_mode == 'off' %}
+            mdi:cloud-off-outline
+        {% else %}
+            mdi:help-circle
+        {%- endif %}
+
+    ecobee_current_operation:
+      friendly_name: 'Current Operation'
+      value_template: >-
+        {%- if states.climate.living_room.attributes.operation == 'idle' %}
+            Idle
+        {% elif states.climate.living_room.attributes.operation == 'cool' %}
+            Cool
+        {% elif states.climate.living_room.attributes.operation == 'heat' %}
+            Heat
+        {% else %}
+            Unavailable
+        {%- endif %}
+      icon_template: >-
+        {%- if states.climate.living_room.attributes.operation == 'idle' %}
+            mdi:pause
+        {% elif states.climate.living_room.attributes.operation == 'cool' %}
+            mdi:snowflake
+        {% elif states.climate.living_room.attributes.operation == 'heat' %}
+            mdi:fire
+        {% else %}
+            mdi:help-circle
+        {%- endif %}

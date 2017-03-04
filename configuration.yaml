@@ -1,0 +1,83 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: imperial
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+config:
+
+conversation:
+
+discovery:
+
+frontend:
+
+history:
+
+logbook:
+
+recorder:
+  purge_days: 5
+
+sun:
+
+updater:
+
+automation: !include_dir_merge_list automation/
+
+group: !include groups.yaml
+
+scene: !include scene.yaml
+
+sensor: !include sensor.yaml
+
+zone: !include zone.yaml
+
+cover:
+  - platform: myq
+    username: !secret cover_username
+    password: !secret cover_password
+    type: liftmaster
+
+device_tracker:
+  - platform: bluetooth_tracker
+    track_new_devices: no
+  - platform: nmap_tracker
+    hosts: 192.168.86.1/24
+    home_interval: 10
+    consider_home: 180
+    track_new_devices: no
+
+ecobee:
+  api_key: !secret ecobee_key
+  hold_temp: False
+
+hdmi_cec:
+  devices:
+    0: Television
+    2: Nvidia Shield
+    3: Raspberry Pi
+
+ifttt:
+  key: !secret ifttt_key
+
+notify:
+  - platform: joaoapps_join
+    device_id: group.all
+    name: join
+    api_key: !secret join_apikey
+
+zwave:
+  usb_path: /dev/ttyACM0
+  polling_interval: 10000 # Polling speed in miliseconds
+  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config

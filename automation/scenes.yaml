@@ -1,0 +1,66 @@
+- alias: Goodnight
+  trigger:
+    platform: time
+    after: '22:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.goodnight
+    - service: climate.set_hold_mode
+      data:
+        hold_mode: 'sleep'
+    - service: hdmi_cec.standby
+
+- alias: Goodbye
+  trigger:
+    platform: state
+    entity_id: group.household
+    state: 'not_home'
+    for:
+      minutes: 10
+  action:
+    - service: scene.turn_on
+      entity_id: scene.goodbye
+    - service: climate.set_hold_mode
+      data:
+        hold_mode: 'away'
+    - service: hdmi_cec.standby
+    - service: notify.join
+      data:
+        message: "Goodbye! Home is secured."
+
+- alias: Hello
+  trigger:
+    platform: state
+    entity_id: group.household
+    state: 'home'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunset
+      - condition: time
+        before: '22:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.hello
+    - service: climate.set_hold_mode
+      data:
+        hold_mode: 'home'
+    - service: notify.join
+      data:
+        message: "Welcome home!"
+
+- alias: Sunset
+  trigger:
+    platform: sun
+    event: sunset
+  condition:
+    condition: state
+    entity_id: group.household
+    state: home
+  action:
+    - service: scene.turn_on
+      entity_id: scene.hello
+    - service: climate.set_hold_mode
+      data:
+        hold_mode: 'home'

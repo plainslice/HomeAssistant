@@ -1,0 +1,39 @@
+upstairs_view:
+  name: Upstairs
+  icon: mdi:numeric-2-box
+  view: yes
+  entities:
+    - group.master_bedroom_lights
+    - group.bedside_lights
+    - group.upper_hallway
+    - scene.ambience
+    - scene.goodnight
+
+#####################################################
+
+master_bedroom_lights:
+  name: Master Bedroom Lights
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_3_0
+    - light.hue_color_lamp_1
+    - light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2
+
+bedside_lights:
+  name: Bedside Lights
+  entities:
+    - switch.aeotec_dsc11_smart_strip_switch_15_0_2
+    - switch.aeotec_dsc11_smart_strip_switch_15_0_3
+
+upper_hallway:
+  name: Hallway / Office
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_14_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_4_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_2_0
+
+upstairs_lights:
+  name: Upstairs Lights
+  entities:
+    - group.master_bedroom_lights
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_4_0
+    - group.bedside_lights

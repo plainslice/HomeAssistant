@@ -1,0 +1,38 @@
+downstairs_view:
+  name: Downstairs
+  icon: mdi:numeric-1-box
+  view: yes
+  entities:
+    - group.living_room_lights
+    - group.dining_kitchen_lights
+    - group.downstairs_other
+
+###############################################
+
+living_room_lights:
+  name: Living Room
+  entities:
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_5_0
+    - switch.ge_12721_lighting_control_duplex_receptacle_switch_16_0
+
+dining_kitchen_lights:
+  name: Dining / Kitchen
+  entities:
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_6_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_8_0
+    - light.ge_12729_3way_dimmer_switch_level_7_0
+
+downstairs_other:
+  name: Other
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_9_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_11_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_12_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_13_0
+
+downstairs_lights:
+  name: Downstairs Lights
+  entities:
+    - group.living_room_lights
+    - group.dining_kitchen_lights
+    - group.downstairs_other

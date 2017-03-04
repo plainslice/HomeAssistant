@@ -1,0 +1,27 @@
+ecobee_view:
+  name: Ecobee
+  view: yes
+  icon: mdi:air-conditioner
+  entities:
+    - binary_sensor.living_room_occupancy
+    - binary_sensor.guest_room_occupancy
+    - binary_sensor.master_bedroom_occupancy
+    - binary_sensor.office_occupancy
+    - group.ecobee_status
+    - group.ecobee_sensors
+
+######################################################
+ecobee_status:
+  name: Ecobee Status
+  entities:
+    - climate.living_room
+    - sensor.ecobee_mode
+
+ecobee_sensors:
+  name: Ecobee Sensors
+  entities:
+    - sensor.living_room_humidity
+    - sensor.living_room_temperature
+    - sensor.master_bedroom_temperature
+    - sensor.office_temperature
+    - sensor.guest_room_temperature

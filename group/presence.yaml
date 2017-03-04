@@ -1,0 +1,19 @@
+household:
+  name: Household
+  entities:
+    - group.jake
+    - group.abbey
+
+###########################
+
+jake:
+  name: Jake
+  entities:
+    #- device_tracker.jake_nmap
+    - device_tracker.jake_bt
+
+abbey:
+  name: Abbey
+  entities:
+    #- device_tracker.abbey_nmap
+    - device_tracker.abbey_bt

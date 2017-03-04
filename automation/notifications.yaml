@@ -1,0 +1,87 @@
+  ##############
+ #  Updates   #
+##############
+- alias: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: persistent_notification.create
+    data:
+      title:   "New Update"
+      message: "Update for Home Assistant is available."
+
+  ##############
+ #  Network  #
+#############
+- alias: Z-Wave network is complete
+  trigger:
+    platform: event
+    event_type: zwave.network_ready
+  action:
+    service: notify.join
+    data:
+      message: "Z Wave Network is up"
+
+ ##############
+ #  Battery  #
+#############
+- alias: Front door battery
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.frontdoor_battery
+    below: 10
+  action:
+    service: notify.join
+    data:
+      message: "The front door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
+
+- alias: Basement door battery
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.basement_door
+    below: 10
+  action:
+    service: notify.join
+    data:
+      message: "The basment door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
+
+- alias: Bedroom motion sensor battery
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.bedroom_motion_battery
+    below: 10
+  action:
+    service: notify.join
+    data:
+      message: "The bedroom motion sensor battery is at {{ states.sensor.bedroom_motion_battery.state }} percent"
+
+- alias: Stairs motion sensor battery
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.stairs_motion_battery
+    below: 10
+  action:
+    service: notify.join
+    data:
+      message: "The stairs motion sensor battery is at {{ states.sensor.stairs_motion_battery.state }} percent"
+
+- alias: Garage motion sensor battery
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.garage_motion_battery
+    below: 10
+  action:
+    service: notify.join
+    data:
+      message: "The garage motion sensor battery is at {{ states.sensor.stairs_motion_battery.state }} percent"
+
+- alias: Garage door battery
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.garage_door_sensor
+    below: 10
+  action:
+    service: notify.join
+    data:
+      message: "The garage door battery is at {{ states.sensor.frontdoor_battery.state }} percent"

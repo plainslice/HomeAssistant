@@ -1,0 +1,257 @@
+  ###############
+ #   Default   #
+###############
+default_view:
+  view: yes
+  entities:
+    - group.status
+    - group.ecobee
+    - group.both_floors
+
+#####################################
+
+status:
+  name: Status
+  entities:
+    - lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0
+    - cover.garage_door_opener
+    - sensor.household
+
+ecobee:
+  name: Climate
+  entities:
+    - climate.living_room
+
+both_floors:
+  name: All Lights
+  entities:
+    - group.downstairs_lights
+    - group.upstairs_lights
+    - group.stair_lights
+
+stair_lights:
+  name: Stairs
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_9_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_4_0
+
+  #################
+ #   Downstairs  #
+#################
+downstairs_view:
+  name: Downstairs
+  icon: mdi:numeric-1-box
+  view: yes
+  entities:
+    - group.living_room_lights
+    - group.dining_kitchen_lights
+    - group.downstairs_other
+
+###############################################
+
+living_room_lights:
+  name: Living Room
+  entities:
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_5_0
+    - switch.ge_12721_lighting_control_duplex_receptacle_switch_16_0
+
+dining_kitchen_lights:
+  name: Dining / Kitchen
+  entities:
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_6_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_8_0
+    - light.ge_12729_3way_dimmer_switch_level_7_0
+
+downstairs_other:
+  name: Other
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_9_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_11_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_12_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_13_0
+
+downstairs_lights:
+  name: Downstairs Lights
+  entities:
+    - group.living_room_lights
+    - group.dining_kitchen_lights
+    - group.downstairs_other
+
+  ###############
+ #   Upstairs  #
+###############
+upstairs_view:
+  name: Upstairs
+  icon: mdi:numeric-2-box
+  view: yes
+  entities:
+    - group.master_bedroom_lights
+    - group.bedside_lights
+    - group.upper_hallway
+    - scene.ambience
+    - scene.goodnight
+
+#####################################################
+
+master_bedroom_lights:
+  name: Master Bedroom Lights
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_3_0
+    - light.hue_color_lamp_1
+    - light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2
+
+bedside_lights:
+  name: Bedside Lights
+  entities:
+    - switch.aeotec_dsc11_smart_strip_switch_15_0_2
+    - switch.aeotec_dsc11_smart_strip_switch_15_0_3
+
+upper_hallway:
+  name: Hallway / Office
+  entities:
+    - light.ge_12729_3way_dimmer_switch_level_14_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_4_0
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_2_0
+
+upstairs_lights:
+  name: Upstairs Lights
+  entities:
+    - group.master_bedroom_lights
+    - switch.ge_12727_inwall_smart_switch_toggle_switch_4_0
+    - group.bedside_lights
+
+  #############
+ #   Ecobee  #
+#############
+ecobee_view:
+  name: Ecobee
+  view: yes
+  icon: mdi:air-conditioner
+  entities:
+    - binary_sensor.living_room_occupancy
+    - binary_sensor.guest_room_occupancy
+    - binary_sensor.master_bedroom_occupancy
+    - binary_sensor.office_occupancy
+    - group.ecobee_status
+    - group.ecobee_sensors
+
+######################################################
+ecobee_status:
+  name: Ecobee Status
+  entities:
+    - climate.living_room
+    - sensor.ecobee_current_mode
+    - sensor.ecobee_current_operation
+
+ecobee_sensors:
+  name: Ecobee Sensors
+  entities:
+    - sensor.living_room_humidity
+    - sensor.living_room_temperature
+    - sensor.master_bedroom_temperature
+    - sensor.office_temperature
+    - sensor.guest_room_temperature
+
+
+  #################
+ #   Automation  #
+#################
+automation_view:
+  name: Automation
+  view: yes
+  icon: mdi:brightness-auto
+  entities:
+    - group.scenes
+    - group.motion_sensors
+    - group.notifications
+
+############################################################
+
+scenes:
+  name: Scenes
+  entities:
+    - automation.hello
+    - automation.goodbye
+    - automation.goodnight
+    - automation.sunset
+
+motion_sensors:
+  name: Motion Sensors
+  entities:
+    - automation.shower_nightlight
+    - automation.stair_lights
+    - automation.basement_door_open
+    - automation.basement_door_closed
+    - automation.garage_light
+    - automation.garage_entry
+    - automation.garage_entry_motion
+
+notifications:
+  name: Notifications
+  entities:
+    - automation.front_door_battery
+    - automation.basement_door_battery
+    - automation.Bedroom_motion_sensor_battery
+    - automation.Stairs_motion_sensor_battery
+    - automation.garage_motion_sensor_battery
+    - automation.garage_door_battery
+
+  ###############
+ #   Settings  #
+###############
+settings_view:
+  name: Settings
+  view: yes
+  icon: mdi:settings
+  entities:
+    - group.battery_level
+    - group.onhub_status
+    - group.pi_status
+
+########################################################
+
+battery_level:
+  name: Battery Level
+  entities:
+    - sensor.frontdoor_battery
+    - sensor.basement_door
+    - sensor.garage_door_sensor
+    - sensor.stairs_motion_battery
+    - sensor.garage_motion_battery
+
+onhub_status:
+  name: OnHub Status
+  entities:
+    - sensor.speedtest_upload
+    - sensor.speedtest_download
+
+pi_status:
+  name: Raspberry Pi Status
+  entities:
+    - sensor.cpu_speed
+    - sensor.last_boot
+    - sensor.disk_use_
+    - sensor.ram_use
+
+  ################
+ #   Housenold  #
+################
+household:
+  name: Household
+  entities:
+    - group.jake
+    - group.abbey
+
+###########################
+
+jake:
+  name: Jake
+  entities:
+    #- device_tracker.jake_nmap
+    - device_tracker.jake_bt
+
+abbey:
+  name: Abbey
+  entities:
+    #- device_tracker.abbey_nmap
+    - device_tracker.abbey_bt

@@ -1,0 +1,39 @@
+automation_view:
+  name: Automation
+  view: yes
+  icon: mdi:brightness-auto
+  entities:
+    - group.scenes
+    - group.motion_sensors
+    - group.notifications
+
+############################################################
+
+scenes:
+  name: Scenes
+  entities:
+    - automation.hello
+    - automation.goodbye
+    - automation.goodnight
+    - automation.sunset
+
+motion_sensors:
+  name: Motion Sensors
+  entities:
+    - automation.shower_nightlight
+    - automation.stair_lights
+    - automation.basement_door_open
+    - automation.basement_door_closed
+    - automation.garage_light
+    - automation.garage_entry
+    - automation.garage_entry_motion
+
+notifications:
+  name: Notifications
+  entities:
+    - automation.front_door_battery
+    - automation.basement_door_battery
+    - automation.Bedroom_motion_sensor_battery
+    - automation.Stairs_motion_sensor_battery
+    - automation.garage_motion_sensor_battery
+    - automation.garage_door_battery

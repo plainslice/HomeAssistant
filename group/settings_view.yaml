@@ -1,0 +1,33 @@
+settings_view:
+  name: Settings
+  view: yes
+  icon: mdi:settings
+  entities:
+    - group.battery_level
+    - group.onhub_status
+    - group.pi_status
+
+########################################################
+
+battery_level:
+  name: Battery Level
+  entities:
+    - sensor.frontdoor_battery
+    - sensor.basement_door
+    - sensor.garage_door_sensor
+    - sensor.stairs_motion_battery
+    - sensor.garage_motion_battery
+
+onhub_status:
+  name: OnHub Status
+  entities:
+    - sensor.speedtest_upload
+    - sensor.speedtest_download
+
+pi_status:
+  name: Raspberry Pi Status
+  entities:
+    - sensor.cpu_speed
+    - sensor.last_boot
+    - sensor.disk_use_
+    - sensor.ram_use
