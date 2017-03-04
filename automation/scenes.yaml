@@ -73,3 +73,5 @@
     - service: climate.set_hold_mode
       data:
         hold_mode: 'home'
+    - service: light.turn_off
+      entity_id: light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2
