@@ -64,3 +64,12 @@
     - service: climate.set_hold_mode
       data:
         hold_mode: 'home'
+
+- alias: Morning
+  trigger:
+    platform: time
+    after: '06:00:00'
+  action:
+    - service: climate.set_hold_mode
+      data:
+        hold_mode: 'home'
