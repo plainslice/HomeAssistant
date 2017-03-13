@@ -51,7 +51,7 @@ light.ge_12729_3way_dimmer_switch_level_9_0:
   icon: mdi:stairs
 light.ge_12729_3way_dimmer_switch_level_3_0:
   friendly_name: Master Bedroom
-light.ge_12729_3way_dimmer_switch_level_14_0:
+light.ge_12729_3way_dimmer_switch_level_32_0:
   friendly_name: Bedroom Hallway
 light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2:
   icon: mdi:led-on
