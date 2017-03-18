@@ -35,7 +35,7 @@ updater:
 
 automation: !include_dir_merge_list automation/
 
-group: !include groups.yaml
+group: !include_dir_merge_named group/
 
 scene: !include scene.yaml
 

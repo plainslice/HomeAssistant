@@ -1,3 +1,6 @@
+  ###############
+ #   Settings  #
+###############
 settings_view:
   name: Settings
   view: yes

@@ -1,3 +1,6 @@
+  ###############
+ #   Default   #
+###############
 default_view:
   view: yes
   entities:

@@ -1,3 +1,6 @@
+  #############
+ #   Ecobee  #
+#############
 ecobee_view:
   name: Ecobee
   view: yes
@@ -15,7 +18,8 @@ ecobee_status:
   name: Ecobee Status
   entities:
     - climate.living_room
-    - sensor.ecobee_mode
+    - sensor.ecobee_current_mode
+    - sensor.ecobee_current_operation
 
 ecobee_sensors:
   name: Ecobee Sensors

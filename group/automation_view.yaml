@@ -1,3 +1,6 @@
+  #################
+ #   Automation  #
+#################
 automation_view:
   name: Automation
   view: yes
@@ -20,7 +23,6 @@ scenes:
 motion_sensors:
   name: Motion Sensors
   entities:
-    - automation.shower_nightlight
     - automation.stair_lights
     - automation.basement_door_open
     - automation.basement_door_closed
