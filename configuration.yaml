@@ -73,7 +73,7 @@ ifttt:
 
 notify:
   - platform: joaoapps_join
-    device_id: group.all
+    device_id: group.android
     name: join
     api_key: !secret join_apikey
   - platform: telegram

@@ -6,6 +6,10 @@
     platform: state
     entity_id: group.abbey
     state: 'home'
+  condition:
+    condition: time
+    after: '05:00:00'
+    before: '06:00:00'
   action:
     service: notify.join
     data:
@@ -16,6 +20,10 @@
     platform: state
     entity_id: group.abbey
     state: 'not_home'
+  condition:
+    condition: time
+    after: '05:00:00'
+    before: '06:00:00'
   action:
     service: notify.join
     data:

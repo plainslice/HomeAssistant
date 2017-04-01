@@ -16,7 +16,7 @@
   sensors:
     frontdoor_battery:
       value_template:
-        '{% if states.lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0 %}
+        '{% if states.zwave.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0 %}
           {{ states.lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0.attributes.battery_level }}
         {% else %}
           n/a
@@ -26,7 +26,7 @@
 
     bedroom_motion_battery:
       value_template:
-        '{% if states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1 %}
+        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1 %}
           {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1.attributes.battery_level }}
         {% else %}
           n/a
@@ -36,7 +36,7 @@
 
     stairs_motion_battery:
       value_template:
-        '{% if states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1 %}
+        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1 %}
           {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1.attributes.battery_level }}
         {% else %}
           n/a
@@ -46,7 +46,7 @@
 
     basement_door:
       value_template:
-        '{% if states.binary_sensor.ecolink_doorwindow_sensor_sensor_19_0 %}
+        '{% if states.zwave.ecolink_doorwindow_sensor_sensor_19_0 %}
           {{ states.binary_sensor.ecolink_doorwindow_sensor_sensor_19_0.attributes.battery_level }}
         {% else %}
           n/a
@@ -56,7 +56,7 @@
 
     garage_motion_battery:
       value_template:
-        '{% if states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1 %}
+        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1 %}
           {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1.attributes.battery_level }}
         {% else %}
           n/a
@@ -66,7 +66,7 @@
 
     garage_door_sensor:
       value_template:
-        '{% if states.binary_sensor.ecolink_doorwindow_sensor_sensor_20_0 %}
+        '{% if states.zwave.ecolink_doorwindow_sensor_sensor_20_0 %}
           {{ states.binary_sensor.ecolink_doorwindow_sensor_sensor_20_0.attributes.battery_level }}
         {% else %}
           n/a
