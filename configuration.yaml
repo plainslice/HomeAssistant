@@ -76,6 +76,10 @@ notify:
     device_id: group.all
     name: join
     api_key: !secret join_apikey
+  - platform: telegram
+    name: TacoBot
+    api_key: !secret telegram_API
+    chat_id: !secret telegram_ID
 
 zwave:
   usb_path: /dev/ttyACM0

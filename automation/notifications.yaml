@@ -1,4 +1,27 @@
   ##############
+ #  Presence  #
+##############
+- alias: Abbey is home
+  trigger:
+    platform: state
+    entity_id: group.abbey
+    state: 'home'
+  action:
+    service: notify.join
+    data:
+      message: "Abbey is Home"
+
+- alias: Abbey is away
+  trigger:
+    platform: state
+    entity_id: group.abbey
+    state: 'not_home'
+  action:
+    service: notify.join
+    data:
+      message: "Abbey is Away"
+
+  ##############
  #  Updates   #
 ##############
 - alias: 'Update Available Notifications'
@@ -19,7 +42,7 @@
     platform: event
     event_type: zwave.network_ready
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "Z Wave Network is up"
 
@@ -32,7 +55,7 @@
     entity_id: sensor.frontdoor_battery
     below: 10
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "The front door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
 
@@ -42,7 +65,7 @@
     entity_id: sensor.basement_door
     below: 10
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "The basment door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
 
@@ -52,7 +75,7 @@
     entity_id: sensor.bedroom_motion_battery
     below: 10
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "The bedroom motion sensor battery is at {{ states.sensor.bedroom_motion_battery.state }} percent"
 
@@ -62,7 +85,7 @@
     entity_id: sensor.stairs_motion_battery
     below: 10
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "The stairs motion sensor battery is at {{ states.sensor.stairs_motion_battery.state }} percent"
 
@@ -72,7 +95,7 @@
     entity_id: sensor.garage_motion_battery
     below: 10
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "The garage motion sensor battery is at {{ states.sensor.stairs_motion_battery.state }} percent"
 
@@ -82,6 +105,6 @@
     entity_id: sensor.garage_door_sensor
     below: 10
   action:
-    service: notify.join
+    service: notify.TacoBot
     data:
       message: "The garage door battery is at {{ states.sensor.frontdoor_battery.state }} percent"

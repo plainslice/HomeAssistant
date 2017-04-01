@@ -39,3 +39,5 @@ notifications:
     - automation.Stairs_motion_sensor_battery
     - automation.garage_motion_sensor_battery
     - automation.garage_door_battery
+    - automation.abbey_is_away
+    - automation.abbey_is_home
