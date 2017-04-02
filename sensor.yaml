@@ -16,38 +16,18 @@
   sensors:
     frontdoor_battery:
       value_template:
-        '{% if states.zwave.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0 %}
-          {{ states.lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0.attributes.battery_level }}
+        '{% if states.zwave.schlage_be469nxcen_touchscreen_deadbolt_17 %}
+          {{ states.zwave.schlage_be469nxcen_touchscreen_deadbolt_17.attributes.battery_level }}
         {% else %}
           n/a
         {% endif %}'
       friendly_name: Front Door Lock
       unit_of_measurement: '%'
 
-    bedroom_motion_battery:
-      value_template:
-        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1 %}
-          {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_4_1.attributes.battery_level }}
-        {% else %}
-          n/a
-        {% endif %}'
-      friendly_name: Bedroom Motion Sensor
-      unit_of_measurement: '%'
-
-    stairs_motion_battery:
-      value_template:
-        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1 %}
-          {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_30_1.attributes.battery_level }}
-        {% else %}
-          n/a
-        {% endif %}'
-      friendly_name: Stairs Motion Sensor
-      unit_of_measurement: '%'
-
     basement_door:
       value_template:
-        '{% if states.zwave.ecolink_doorwindow_sensor_sensor_19_0 %}
-          {{ states.binary_sensor.ecolink_doorwindow_sensor_sensor_19_0.attributes.battery_level }}
+        '{% if states.zwave.ecolink_doorwindow_sensor_19 %}
+          {{ states.zwave.ecolink_doorwindow_sensor_19.attributes.battery_level }}
         {% else %}
           n/a
         {% endif %}'
@@ -56,8 +36,8 @@
 
     garage_motion_battery:
       value_template:
-        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1 %}
-          {{ states.sensor.vision_zp3102_eu_pir_motion_sensor_alarm_level_31_1.attributes.battery_level }}
+        '{% if states.zwave.vision_zp3102_eu_pir_motion_sensor_31 %}
+          {{ states.zwave.vision_zp3102_eu_pir_motion_sensor_31.attributes.battery_level }}
         {% else %}
           n/a
         {% endif %}'
@@ -66,8 +46,8 @@
 
     garage_door_sensor:
       value_template:
-        '{% if states.zwave.ecolink_doorwindow_sensor_sensor_20_0 %}
-          {{ states.binary_sensor.ecolink_doorwindow_sensor_sensor_20_0.attributes.battery_level }}
+        '{% if states.zwave.ecolink_doorwindow_sensor_20 %}
+          {{ states.zwave.ecolink_doorwindow_sensor_20.attributes.battery_level }}
         {% else %}
           n/a
         {% endif %}'

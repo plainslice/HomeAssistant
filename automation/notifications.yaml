@@ -50,7 +50,7 @@
     platform: event
     event_type: zwave.network_ready
   action:
-    service: notify.TacoBot
+    service: notify.HassBot
     data:
       message: "Z Wave Network is up"
 
@@ -63,7 +63,7 @@
     entity_id: sensor.frontdoor_battery
     below: 10
   action:
-    service: notify.TacoBot
+    service: notify.HassBot
     data:
       message: "The front door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
 
@@ -73,29 +73,9 @@
     entity_id: sensor.basement_door
     below: 10
   action:
-    service: notify.TacoBot
+    service: notify.HassBot
     data:
       message: "The basment door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
-
-- alias: Bedroom motion sensor battery
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.bedroom_motion_battery
-    below: 10
-  action:
-    service: notify.TacoBot
-    data:
-      message: "The bedroom motion sensor battery is at {{ states.sensor.bedroom_motion_battery.state }} percent"
-
-- alias: Stairs motion sensor battery
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.stairs_motion_battery
-    below: 10
-  action:
-    service: notify.TacoBot
-    data:
-      message: "The stairs motion sensor battery is at {{ states.sensor.stairs_motion_battery.state }} percent"
 
 - alias: Garage motion sensor battery
   trigger:
@@ -103,7 +83,7 @@
     entity_id: sensor.garage_motion_battery
     below: 10
   action:
-    service: notify.TacoBot
+    service: notify.HassBot
     data:
       message: "The garage motion sensor battery is at {{ states.sensor.stairs_motion_battery.state }} percent"
 
@@ -113,6 +93,6 @@
     entity_id: sensor.garage_door_sensor
     below: 10
   action:
-    service: notify.TacoBot
+    service: notify.HassBot
     data:
       message: "The garage door battery is at {{ states.sensor.frontdoor_battery.state }} percent"
