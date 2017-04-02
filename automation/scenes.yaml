@@ -24,7 +24,7 @@
       data:
         hold_mode: 'away'
     - service: hdmi_cec.standby
-    - service: notify.join
+    - service: notify.TacoBot
       data:
         message: "Goodbye! Home is secured."
 
@@ -46,7 +46,7 @@
     - service: climate.set_hold_mode
       data:
         hold_mode: 'home'
-    - service: notify.join
+    - service: notify.TacoBot
       data:
         message: "Welcome home!"
 
