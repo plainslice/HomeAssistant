@@ -27,7 +27,7 @@ I am running HASS on a Raspberry Pi 3 (specifically, [this](https://www.amazon.c
 - [Github Backup](https://home-assistant.io/cookbook/githubbackup/): I back up all of my config files directly to Github using this script
 - [Atom](https://atom.io/): Awesome free Mac program to edit yaml that works great along with these plugins:
     - [Remote FTP](https://atom.io/packages/Remote-FTP): SFTP program to connect easily to Pi
-    - [YAML Sortkey](https://atom.io/packages/yaml-sortkey): Automatic YAML validation
+    - [Linter JS YAML](https://atom.io/packages/linter-js-yaml): Inline YAML validation
 - [iTerm 2](https://www.iterm2.com/): Great free alternative to Terminal that makes SSHing easier thanks to advanced features
 - [Etcher](https://etcher.io/): Awesome app for imaging SD cards
 
