@@ -37,10 +37,13 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: persistent_notification.create
-    data:
-      title:   "New Update"
-      message: "Update for Home Assistant is available."
+    - service: notify.TacoBot
+      data:
+        message: "A new update for Home Assistant is available."
+    - service: persistent_notification.create
+      data:
+        title:   "New Update"
+        message: "A new update for Home Assistant is available."
 
   ##############
  #  Network  #

@@ -46,9 +46,9 @@
     - service: climate.set_hold_mode
       data:
         hold_mode: 'home'
-    - service: notify.TacoBot
-      data:
-        message: "Welcome home!"
+    #- service: notify.TacoBot
+    #  data:
+    #    message: "Welcome home!"
 
 - alias: Sunset
   trigger:

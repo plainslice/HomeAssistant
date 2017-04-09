@@ -41,3 +41,4 @@ notifications:
     - automation.garage_door_battery
     - automation.abbey_is_away
     - automation.abbey_is_home
+    - automation.update_available_notifications
