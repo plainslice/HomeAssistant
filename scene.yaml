@@ -12,10 +12,10 @@
     light.ge_12729_3way_dimmer_switch_level_3_0: off
     group.bedside_lights: off
     group.upper_hallway: off
-    light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2:
-      state: on
-      brightness: 10
-      rgb_color: [255, 0, 0]
+    light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2: on
+      #state: on
+      #brightness: 10
+      #rgb_color: [255, 0, 0]
     group.stair_lights: off
     group.downstairs_lights: off
     light.hue_color_lamp_1: off

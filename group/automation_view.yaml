@@ -42,3 +42,4 @@ notifications:
     - automation.abbey_is_away
     - automation.abbey_is_home
     - automation.update_available_notifications
+    - automation.time_to_work

@@ -12,6 +12,13 @@
       arg: /
     - type: last_boot
     - type: memory_use_percent
+- platform: google_travel_time
+  name: Time to Work
+  api_key: !secret google_API
+  origin: zone.Home
+  destination: zone.Office
+  #options:
+  #  arrival_time: 08:00:00
 - platform: template
   sensors:
     frontdoor_battery:

@@ -6,10 +6,6 @@
     platform: state
     entity_id: group.abbey
     state: 'home'
-  #condition:
-  #  condition: time
-  #  after: '05:00:00'
-  #  before: '06:00:00'
   action:
     service: notify.join
     data:
@@ -20,14 +16,20 @@
     platform: state
     entity_id: group.abbey
     state: 'not_home'
-  #condition:
-  #  condition: time
-  #  after: '05:00:00'
-  #  before: '06:00:00'
   action:
     service: notify.join
     data:
       message: "Abbey is Away"
+
+- alias: Time to Work
+  trigger:
+    platform: time
+    after: '07:40:00'
+  action:
+    service: notify.join
+    data:
+      title: "Time to Work"
+      message: "{{ states.sensor.time_to_work.attributes.duration }}"
 
   ##############
  #  Updates   #
