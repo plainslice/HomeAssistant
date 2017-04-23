@@ -1,0 +1,34 @@
+- alias: 'Start'
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/start'
+  action:
+    - service: notify.TacoBot
+      data:
+        message: "I'm Taco, the dog. Woof Woof!"
+        data:
+          keyboard:
+            - '/woof, /night'
+
+- alias: 'Woof'
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/woof'
+  action:
+    - service: notify.TacoBot
+      data:
+        message: "woof!"
+
+- alias: 'night'
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/night'
+  action:
+    - service: automation.trigger
+      entity_id: automation.goodnight

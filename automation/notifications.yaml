@@ -21,16 +21,6 @@
     data:
       message: "Abbey is Away"
 
-- alias: Time to Work
-  trigger:
-    platform: time
-    after: '07:40:00'
-  action:
-    service: notify.join
-    data:
-      title: "Time to Work"
-      message: "{{ states.sensor.time_to_work.attributes.duration }}"
-
   ##############
  #  Updates   #
 ##############
