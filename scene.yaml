@@ -12,15 +12,15 @@
     light.ge_12729_3way_dimmer_switch_level_3_0: off
     group.bedside_lights: off
     group.upper_hallway: off
-    light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2:
+    light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0:
       state: on
       brightness: 10
-      #rgb_color: [255, 0, 0]
+      rgb_color: [255, 0, 0]
     group.stair_lights: off
     group.downstairs_lights: off
     light.hue_color_lamp_1: off
     switch.ge_12727_inwall_smart_switch_toggle_switch_13_0: on
-    lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0: locked
+    lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0: locked
     cover.garage_door_opener: closed
 
 
@@ -28,7 +28,7 @@
   entities:
     group.all_lights: off
     group.all_switches: off
-    lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0: locked
+    lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0: locked
     cover.garage_door_opener: closed
 
 - name: Hello
@@ -72,4 +72,4 @@
     group.bedside_lights: on
     light.ge_12729_3way_dimmer_switch_level_3_0: off
     switch.ge_12727_inwall_smart_switch_toggle_switch_4_0: off
-    light.ge_12729_3way_dimmer_switch_level_14_0: off
+    light.ge_12729_3way_dimmer_switch_level_32_0: off

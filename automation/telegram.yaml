@@ -1,7 +1,7 @@
 - alias: 'Start'
   trigger:
     platform: event
-    event_type: telegram_command
+    event_type: telegram.command
     event_data:
       command: '/start'
   action:
@@ -15,7 +15,7 @@
 - alias: 'Woof'
   trigger:
     platform: event
-    event_type: telegram_command
+    event_type: telegram.command
     event_data:
       command: '/woof'
   action:
@@ -26,7 +26,7 @@
 - alias: 'night'
   trigger:
     platform: event
-    event_type: telegram_command
+    event_type: telegram.command
     event_data:
       command: '/night'
   action:

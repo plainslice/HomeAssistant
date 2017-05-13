@@ -14,7 +14,7 @@ default_view:
 status:
   name: Status
   entities:
-    - lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0
+    - lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0
     - cover.garage_door_opener
     - sensor.household
 

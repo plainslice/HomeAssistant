@@ -1,5 +1,5 @@
 #doors
-lock.schlage_be469nxcen_touchscreen_deadbolt_locked_17_0:
+lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0:
   friendly_name: Front Door
 cover.garage_door_opener:
   friendly_name: Garage
@@ -53,7 +53,7 @@ light.ge_12729_3way_dimmer_switch_level_3_0:
   friendly_name: Master Bedroom
 light.ge_12729_3way_dimmer_switch_level_32_0:
   friendly_name: Bedroom Hallway
-light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2:
+light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0:
   icon: mdi:led-on
   friendly_name: Bed LED Strip
 

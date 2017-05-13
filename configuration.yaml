@@ -91,4 +91,4 @@ telegram_webhooks:
 zwave:
   usb_path: /dev/ttyACM0
   polling_interval: 10000 # Polling speed in miliseconds
-  config_path: /srv/homeassistant/lib/python3.4/site-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config
+  config_path: /srv/homeassistant/lib/python3.4/site-packages/python_openzwave/ozw_config

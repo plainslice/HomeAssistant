@@ -19,7 +19,7 @@ master_bedroom_lights:
   entities:
     - light.ge_12729_3way_dimmer_switch_level_3_0
     - light.hue_color_lamp_1
-    - light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0_2
+    - light.fibaro_system_fgrgbwm441_rgbw_controller_level_18_0
 
 bedside_lights:
   name: Bedside Lights

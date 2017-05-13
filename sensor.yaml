@@ -23,8 +23,8 @@
   sensors:
     frontdoor_battery:
       value_template:
-        '{% if states.zwave.schlage_be469nxcen_touchscreen_deadbolt_17 %}
-          {{ states.zwave.schlage_be469nxcen_touchscreen_deadbolt_17.attributes.battery_level }}
+        '{% if states.zwave.schlage_be469nxcen_touchscreen_deadbolt_33 %}
+          {{ states.zwave.schlage_be469nxcen_touchscreen_deadbolt_33.attributes.battery_level }}
         {% else %}
           n/a
         {% endif %}'
