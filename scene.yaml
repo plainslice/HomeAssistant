@@ -1,11 +1,24 @@
-- name: Sunset
+- name: Ambience
   entities:
-    group.living_room_lights: on
-    group.dining_kitchen_lights: on
-    group.stair_lights: on
-    group.master_bedroom_lights: on
-    group.upper_hallway: on
-    switch.ge_12727_inwall_smart_switch_toggle_switch_13_0: on
+    group.bedside_lights: on
+    light.ge_12729_3way_dimmer_switch_level_3_0: off
+    switch.ge_12727_inwall_smart_switch_toggle_switch_4_0: off
+    light.ge_12729_3way_dimmer_switch_level_32_0: off
+
+- name: AmbienceTwo
+  entities:
+    switch.aeotec_dsc11_smart_strip_switch_15_0_2: off
+    switch.aeotec_dsc11_smart_strip_switch_15_0_3: on
+    light.ge_12729_3way_dimmer_switch_level_3_0: off
+    switch.ge_12727_inwall_smart_switch_toggle_switch_4_0: off
+    light.ge_12729_3way_dimmer_switch_level_32_0: off
+
+- name: Goodbye
+  entities:
+    group.all_lights: off
+    group.all_switches: off
+    lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0: locked
+    cover.garage_door_opener: closed
 
 - name: Goodnight
   entities:
@@ -20,14 +33,6 @@
     group.downstairs_lights: off
     light.hue_color_lamp_1: off
     switch.ge_12727_inwall_smart_switch_toggle_switch_13_0: on
-    lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0: locked
-    cover.garage_door_opener: closed
-
-
-- name: Goodbye
-  entities:
-    group.all_lights: off
-    group.all_switches: off
     lock.schlage_be469nxcen_touchscreen_deadbolt_locked_33_0: locked
     cover.garage_door_opener: closed
 
@@ -67,9 +72,11 @@
       brightness: 200
       rgb_color: [255, 166, 87]
 
-- name: Ambience
+- name: Sunset
   entities:
-    group.bedside_lights: on
-    light.ge_12729_3way_dimmer_switch_level_3_0: off
-    switch.ge_12727_inwall_smart_switch_toggle_switch_4_0: off
-    light.ge_12729_3way_dimmer_switch_level_32_0: off
+    group.living_room_lights: on
+    group.dining_kitchen_lights: on
+    group.stair_lights: on
+    group.master_bedroom_lights: on
+    group.upper_hallway: on
+    switch.ge_12727_inwall_smart_switch_toggle_switch_13_0: on
